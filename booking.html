@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <header
+      class="bg-[url(/images/booking/hero-bg-desktop.jpg)] h-[500px] bg-cover w-full absolute"
+    >
+      <div class="ml-15 pt-15">
+        <img src="/images/logo.svg" alt="logo" class="pb-30" />
+        <h1 class="text-gray-300 pb-5 text-4xl">Reservations</h1>
+        <p class="text-gray-400">
+          We can’t wait to host you. If you have any special<br />
+          requirements please feel free to call on the phone <br />
+          number below. We’ll be happy to accommodate you.
+        </p>
+      </div>
+    </header>
+    <main class=" ">
+      <div class=" ">
+        <img src="" alt="" />
+        <div class="max-w-md ml-[600px]">
+          <form id="form"
+            class="space-y-6 bg-white pb-[25px] relative pt-[25px] mt-[210px] pl-[25px] pr-[25px]"
+          >
+            <div class="border-b border-gray-300 pb-2">
+              <input
+                type="text"
+                placeholder="Name"
+                class="w-full p-2 focus:outline-none placeholder-gray-700"
+              />
+            </div>
+
+            <div class="border-b border-gray-300 pb-2">
+              <input
+                type="email"
+                placeholder="Email"
+                class="w-full p-2 focus:outline-none placeholder-gray-700"
+              />
+            </div>
+
+            <div class="space-y-2 flex">
+              <p class="text-gray-700 pr-[70px] min-w-fit">Pick a date</p>
+              <div class="grid grid-cols-3 gap-4">
+                <input
+                
+                  placeholder="MM"
+                  class="p-2 border-b border-gray-300 focus:outline-none"
+                />
+                <input
+                  placeholder="DD"
+                  class="p-2 border-b border-gray-300 focus:outline-none"
+                />
+                <input
+                  placeholder="YYYY"
+                  class="p-2 border-b border-gray-300 focus:outline-none"
+                />
+              </div>
+            </div>
+
+            <div class="space-y-2 flex">
+              <p class="text-gray-700 pr-[70px] min-w-fit">Pick a time</p>
+              <div class="grid grid-cols-3 gap-4">
+                <input value="09" class="p-2 border-b border-gray-300" />
+                <input value="00" class="p-2 border-b border-gray-300" />
+                <input value="AM" class="p-2 border-b border-gray-300" />
+              </div>
+            </div>
+
+            <div
+              class="flex justify-between items-center border-b border-gray-300 py-2"
+            >
+              <div class="flex gap-40">
+                <button
+                  id="minus-btn"
+                  type="button"
+                  class="text-gray-700 text-xl ml-5"
+                >
+                  -
+                </button>
+                <span class="text-gray-700 ml min-w-fit"
+                  ><span id="counter">4</span> people</span
+                >
+                <button
+                  id="add-btn"
+                  type="button"
+                  class="text-gray-700 text-xl"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+
+            <!-- Reservation Button/Link -->
+            <a
+            id="summit-btn"
+              href=""
+              class="block w-full bg-white text-black text-center py-4 hover:bg-blue-950 transition-colors duration-300 border-2"
+            >
+              MAKE RESERVATION
+            </a>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer
+      class="grid md:grid-cols-3 gap-8 lg:px-50 pt-[100px] text-gray-600 mt-[200px] ml-[-130px] bg-black h-[280px]"
+    >
+      <div class="mb-8 md:mb-0">
+        <img class="" src="/images/logo.svg" alt="" />
+      </div>
+
+      <div class="mb-8 md:mb-0">
+        <p class="mb-2">MARTHWAITE, SEDBERGH</p>
+        <p class="mb-2">CUMBRIA</p>
+        <p>+00 44 123 4567</p>
+      </div>
+
+      <div>
+        <p class="mb-2">OPEN TIMES</p>
+        <p class="mb-2">MON - FRI: 09:00 AM - 10:00 PM</p>
+        <p>SAT - SUN: 09:00 AM - 11:30 PM</p>
+      </div>
+    </footer>
+  </body>
+  <script>
+    const plusButton = document.querySelector("#add-btn");
+    const minusButton = document.querySelector("#minus-btn");
+    const formButton = document.querySelector('#summit-btn')
+    const formContent = document.querySelector('#form')
+    let counte = 4;
+
+    
+
+    plusButton.addEventListener("click", function () {
+      counte++;
+
+      counter.innerHTML = counte;
+    });
+
+    minusButton.addEventListener("click", function () {
+      counte--;
+
+      counter.innerHTML = counte;
+    });
+
+    formButton.addEventListener('click', function(event){
+      event.preventDefault()
+      formContent.innerHTML = "Your reservation has been submitted successfully! we'll send a confirmation email shortly"
+      formContent.style.color = "green"
+       formContent.style.backgroundColor ="#00fa9a"
+
+      // alert('clicked')
+      
+      
+      
+    })
+
+  </script>
+</html>
+
+<!-- 
+  Reservations
+
+  We can’t wait to host you. If you have any special requirements please feel free to 
+  call on the phone number below. We’ll be happy to accommodate you.
+
+
+
+  Name
+  Email
+  Pick a date
+  Pick a time
+
+  Make Reservation
+
+
+
+  Marthwaite, Sedbergh
+  Cumbria
+  +00 44 123 4567
+
+  Open Times
+  Mon - Fri: 09:00 AM - 10:00 PM
+  Sat - Sun: 09:00 AM - 11:30 PM -->
